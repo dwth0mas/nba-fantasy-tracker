@@ -15,7 +15,7 @@ import {
     View,
   } from '@aws-amplify/ui-react';
   
-const Home = ({ signOut }) => {
+const Home = () => {
     const [notes, setNotes] = useState([]);
 
     useEffect(() => {
@@ -140,7 +140,6 @@ const Home = ({ signOut }) => {
     <div>
         <NoteInput/>
         <NotesList/>
-        <Button onClick={signOut}>Sign Out</Button>
         <FooterHeader />
     </div>
   );

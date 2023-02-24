@@ -11,7 +11,7 @@ import Players from './pages/players';
 import Teams from './pages/teams';
 import Standings from './pages/standings';
 
-const App = () => {
+const App = ({ signOut }) => {
   return (
     <View className="App">
       <Router>
