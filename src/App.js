@@ -7,11 +7,11 @@ import {
 import NavBar from './components/NavBar';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './pages/index';
-import Players from './pages/players';
+import Players from './pages/players/players';
 import Teams from './pages/teams';
 import Standings from './pages/standings';
 
-const App = ({ signOut }) => {
+const App = () => {
   return (
     <View className="App">
       <Router>
