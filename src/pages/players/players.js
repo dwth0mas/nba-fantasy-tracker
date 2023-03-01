@@ -1,45 +1,31 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
-import DataTable from '../../components/DataTable/index'
+import React, { useEffect } from 'react';
+import DataTable from '../../components/DataTable/index';
+import useApi from '../../hooks/UseApi'
+import playersService from '../../services/Players.service';
 
 const Players = () => {
-
-  const options = {
-    method: 'GET',
-    url: 'https://free-nba.p.rapidapi.com/players',
-    params: {parge: '0', per_page: '100'},
-    headers: {
-      'X-RapidAPI-Key': '3c7f30daf9msh9ded06a73d473dfp192553jsnadc5c4f979b1',
-      'X-RapidAPI-Host': 'free-nba.p.rapidapi.com'
-    }
-  }
-
-  const [players, setPlayers] = useState([]);
+  const getPlayersService = useApi(playersService.getPlayers);
 
   useEffect(() => {
-    (async () => {
-      try {
-        const playerData = await axios.request(options);
-        console.log(playerData.data.data);
-        setPlayers(playerData.data.data);
-      } catch (err) {
-        console.error("Error getting player data: ", err);
-      }
-    })();
+    getPlayersService.request();
   }, []);
 
-  console.log(players);
+  console.log(getPlayersService);
 
   return (
     <div
       style={{
         justifyContent: 'Center',
         alignItems: 'Center',
-        height: '100vh'
+        height: '100vh',
+        display: 'flex',
+        flexDirection: 'column'
       }}
     >
       <h1>Players Data</h1>
-      <DataTable players={players}></DataTable>
+      {getPlayersService.loading && <p>Players are loading!</p>}
+      {getPlayersService.error && <p>{getPlayersService.error}</p>}
+      <DataTable players={getPlayersService.data ?? []}></DataTable>
     </div>
   );
 };

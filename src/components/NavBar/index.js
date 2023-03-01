@@ -26,8 +26,8 @@ const NavBar = () => {
                 <NavLink to='/teams' activeStyle>
                     Teams
                 </NavLink>
-                <NavLink to='/standings' activeStyle>
-                    Standings
+                <NavLink to='/games' activeStyle>
+                    Games
                 </NavLink>
                 <NavLink onClick={signOut} activeStyle>
                     Sign Out
