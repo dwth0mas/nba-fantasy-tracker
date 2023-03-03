@@ -1,0 +1,8 @@
+.table-page {
+    justify-content: 'Center';
+    align-items: 'Center';
+    height: '100vh';
+    display: 'flex';
+    flex-direction: 'column';
+    padding-top: '20px';
+}

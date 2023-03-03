@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import TeamsTable from '../../components/DataTable/TeamsTable';
+import TeamsTable from '../../components/DataTables/TeamsTable';
 import useApi from '../../hooks/UseApi'
 import teamsService from '../../services/Teams.service';
   
@@ -12,16 +12,7 @@ const Teams = () => {
   }, []);
 
   return (
-    <div
-      style={{
-        display: 'flex',
-        justifyContent: 'Center',
-        alignItems: 'Center',
-        height: '100vh',
-        paddingTop: '20px',
-        flexDirection: 'column'
-      }}
-    >
+    <div className="table-page">
       <h1>Teams Data</h1>
       {getTeamsService.loading && <p>Teams are loading!</p>}
       {getTeamsService.error && <p>{getTeamsService.error}</p>}

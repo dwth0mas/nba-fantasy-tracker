@@ -7,9 +7,9 @@ import {
 import NavBar from './components/NavBar/NavBar';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './pages/index';
-import Players from './pages/players/players';
-import Teams from './pages/teams/teams';
-import Games from './pages/games/games';
+import Players from './pages/players/Players';
+import Teams from './pages/teams/Teams';
+import Games from './pages/games/Games';
 
 const App = () => {
   return (

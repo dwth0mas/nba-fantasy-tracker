@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import DataTable from '../../components/DataTable/PlayersTable';
+import GamesTable from '../../components/DataTables/GamesTable';
 import useApi from '../../hooks/UseApi'
 import gamesService from '../../services/Games.service';
   
@@ -8,21 +8,13 @@ const Games = () => {
 
   useEffect(() => {
     getGamesService.request();
+    console.log(getGamesService);
   }, []);
 
-  console.log(getGamesService);
-
   return (
-    <div
-      style={{
-        display: 'flex',
-        justifyContent: 'Center',
-        alignItems: 'Center',
-        height: '100vh'
-      }}
-    >
+    <div className="table-page">
       <h1>Games Data</h1>
-      {/* <DataTable players={getGamesService.data ?? []}></DataTable> */}
+      <GamesTable games={getGamesService.data ?? []}></GamesTable>
     </div>
   );
 };
