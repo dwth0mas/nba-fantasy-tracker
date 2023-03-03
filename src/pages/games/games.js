@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import DataTable from '../../components/DataTable';
+import DataTable from '../../components/DataTable/PlayersTable';
 import useApi from '../../hooks/UseApi'
 import gamesService from '../../services/Games.service';
   

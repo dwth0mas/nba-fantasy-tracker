@@ -5,6 +5,7 @@ NavLink,
 Bars,
 NavMenu
 } from './NavbarElements';
+import './NavbarStyle.css'
 import { useAuthenticator } from '@aws-amplify/ui-react';
 
 const NavBar = () => {
@@ -12,9 +13,10 @@ const NavBar = () => {
     const { signOut } = useAuthenticator();
 
     return (
-        <>
+        <div className="navbar">
+            <h1 className="nav-title"> Swish Center </h1>
             <Nav>
-                <Bars />
+                {/* <Bars /> */}
 
                 <NavMenu>
                 <NavLink to='/' activeStyle>
@@ -36,7 +38,7 @@ const NavBar = () => {
                 {/* <NavBtnLink to='/sign-in'>Sign In</NavBtnLink> */}
                 </NavMenu>
             </Nav>
-        </>
+        </div>
     );
 };
 

@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import DataTable from '../../components/DataTable/index';
+import DataTable from '../../components/DataTable/PlayersTable';
 import useApi from '../../hooks/UseApi'
 import playersService from '../../services/Players.service';
 
@@ -8,9 +8,9 @@ const Players = () => {
 
   useEffect(() => {
     getPlayersService.request();
+    console.log(getPlayersService);
   }, []);
 
-  console.log(getPlayersService);
 
   return (
     <div
@@ -19,7 +19,8 @@ const Players = () => {
         alignItems: 'Center',
         height: '100vh',
         display: 'flex',
-        flexDirection: 'column'
+        flexDirection: 'column',
+        paddingTop: '20px'
       }}
     >
       <h1>Players Data</h1>

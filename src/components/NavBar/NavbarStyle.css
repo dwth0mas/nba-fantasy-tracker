@@ -1,0 +1,11 @@
+.navbar {
+    background: #0B6E4F;
+    flex-direction: row;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.nav-title {
+    justify-content: left;
+    color: #fa9f42;
+}
